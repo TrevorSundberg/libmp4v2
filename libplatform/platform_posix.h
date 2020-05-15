@@ -66,7 +66,7 @@ namespace mp4v2 { namespace platform {
 // so we set this macro to for some int<->string code to manually copy string
 // bytes into an int which aligns it. This is much easier than trying to
 // align pertinent string data (constants) from in text sections.
-#if defined( __arm__ )
+#if defined( __arm__ ) || defined( __EMSCRIPTEN__ )
 #   define MP4V2_INTSTRING_ALIGNMENT 1
 #else
 #   undef MP4V2_INTSTRING_ALIGNMENT
